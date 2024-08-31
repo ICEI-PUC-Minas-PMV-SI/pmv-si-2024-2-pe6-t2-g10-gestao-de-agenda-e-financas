@@ -10,12 +10,12 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo de
 
 ## Integrantes
 
-* Higor Botelho Mendes
 * Alexandre Fernandes Abreu
-* Thalita de Oliveira Farias
 * Aline Souza Alves
 * Gabriel Henrique Martins Avelino
+* Higor Botelho Mendes
 * Leandro Felipe Gonçalves Barbosa
+* Thalita de Oliveira Farias
 
 ## Orientador
 
