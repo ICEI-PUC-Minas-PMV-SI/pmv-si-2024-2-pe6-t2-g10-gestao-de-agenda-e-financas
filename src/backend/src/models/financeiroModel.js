@@ -14,9 +14,9 @@ const getFaturamentoDia = async (id, data) => {
         data: { $gte: inicioDia, $lte: fimDia }
     });
 
-    const faturamento = agendamentos.reduce((total, agendamento) => total + agendamento.preco, 0);
+    // const faturamento = agendamentos.reduce((total, agendamento) => total + agendamento.preco, 0);
 
-    return { faturamento, agendamentos };
+    return { agendamentos };
 }
 
 const getFaturamentoPorIntervalo = async (id, dataInicial, dataFinal) => {
@@ -31,9 +31,9 @@ const getFaturamentoPorIntervalo = async (id, dataInicial, dataFinal) => {
         data: { $gte: inicioIntervalo, $lte: fimIntervalo }
     });
     
-    const faturamento = agendamentos.reduce((total, agendamento) => total + agendamento.preco, 0);
+    // const faturamento = agendamentos.reduce((total, agendamento) => total + agendamento.preco, 0);
 
-    return { faturamento, agendamentos };
+    return { agendamentos };
 }
 
 module.exports = {
