@@ -5,6 +5,13 @@
 h1 {
 
     text-align: center;
+    width: 459px;
+    height: 94px;
+    top: 130px;
+    left: 490px;
+    gap: 0px;
+    opacity: 0px;
+
 
 }
 
@@ -15,17 +22,36 @@ form {
     border: 3px;
     color: #7E5A9B;
     font-size: 24px;
+    border: 3px solid #D9D9D9;
+    width: 672px;
+    top: 310px;
+    left: 384px;
+    gap: 0px;
+    opacity: 0px;
+    
+
+
 
 }
 
 .input {
-    border: 3px solid #7E5A9B;
+    
+    width: 565px;
+    height: 46px;
+    top: 388px;
+    left: 442px;
     border-radius: 8px;
+    border: 3px solid #BDBDBD;
+    width: 565px;
+    height: 46px;
+    gap: 0px;
+    opacity: 0px;
+
 
 }
 
 
 Button {
-    color: #FFFFFF;
+    color: #4BAE4F;
 
 }
