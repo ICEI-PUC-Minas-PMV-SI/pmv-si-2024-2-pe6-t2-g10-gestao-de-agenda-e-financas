@@ -1,63 +1,42 @@
 const agendamentosModel = require('../models/agendamentoModel');
+const { getAll: getAllPrestadores } = require('../models/servicesPrestador'); 
+const { getAllClientes } = require('../models/clienteModel'); 
 
-const getAll = async (_request, response) => {
+const getAll = async (req, res) => {
   try {
-    const agendamentos = await agendamentosModel.getAll(_request.prestador._id);
-    return response.status(200).json(agendamentos);
+    const agendamentos = await agendamentosModel.getAll();
+    return res.status(200).json(agendamentos);
   } catch (error) {
-    return response.status(500).json( {error: error.message });
+    return res.status(500).json({ message: 'Erro ao buscar agendamentos', error });
   }
 };
 
 const createAgendamento = async (request, response) => {
-  try {
-    const { nomeCliente, nomePrestador, data, horario } = request.body;
-    const novoAgendamento = await agendamentosModel.createAgendamento({
-      nomeCliente,
-      nomePrestador,
-      data,
-      horario,
-      prestadorId: request.prestador._id
-    });
-    return response.status(201).json(novoAgendamento); 
-  } catch (error) {
-    return response.status(500).json({ message: 'Erro ao criar agendamento', error: error.message }); 
-  }
+  
+  const prestadores = await getAllPrestadores();
+  const clientes = await getAllClientes();
+
+  const createdAgendamento = await agendamentosModel.createAgendamento(request.body);
+  
+  return response.status(201).json({
+    createdAgendamento,
+    prestadores,
+    clientes,
+  });
 };
 
 const deleteAgendamento = async (request, response) => {
-  try {
-    const { id } = request.params;
-    const deletedAgendamento = await agendamentosModel.deleteAgendamento(id, request.prestador._id);
-    
-    if (!deletedAgendamento) {
-      return response.status(404).json({ message: 'Agendamento não encontrado' });
-    }
+  const { id } = request.params;
 
-    return response.status(200).json({ message: 'Agendamento removido com sucesso' });
-  } catch (error) {
-    return response.status(500).json({ message: 'Erro ao remover agendamento', error: error.message });
-  }
+  await agendamentosModel.deleteAgendamento(id);
+  return response.status(204).json();
 };
 
-
 const updateAgendamento = async (request, response) => {
-  try {
-    const { id } = request.params;
-    const { nomeCliente, nomePrestador, data, horario } = request.body;
-    const updatedAgendamento = await agendamentosModel.updateAgendamento(
-      id,
-      { nomeCliente, nomePrestador, data, horario, prestadorId: request.prestador._id }
-    );
-    
-    if (!updatedAgendamento) {
-      return response.status(404).json({ message: 'Agendamento não encontrado' });
-    }
+  const { id } = request.params;
 
-    return response.status(200).json(updatedAgendamento);
-  } catch (error) {
-    return response.status(500).json({ message: 'Erro ao atualizar agendamento', error: error.message });
-  }
+  await agendamentosModel.updateAgendamento(id, request.body);
+  return response.status(204).json();
 };
 
 module.exports = {

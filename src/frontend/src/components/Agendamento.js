@@ -43,7 +43,7 @@ const Agendamento = () => {
       const data = await response.json();
 
       const formattedEvents = data.map((agendamento) => ({
-        title: `${agendamento.nomeCliente} - ${agendamento.nomePrestador}`,
+        title: `${agendamento.nomeCliente ? agendamento.nomeCliente : 'Cliente Desconhecido'} - ${agendamento.nomePrestador ? agendamento.nomePrestador : 'Prestador Desconhecido'}`,
         start: new Date(agendamento.data),
         end: new Date(agendamento.data),
       }));

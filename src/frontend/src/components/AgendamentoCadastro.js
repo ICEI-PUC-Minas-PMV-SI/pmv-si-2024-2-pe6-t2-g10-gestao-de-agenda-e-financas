@@ -5,55 +5,74 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
+import axios from "axios";
 
 import "../components/styles/AgendamentoCadastro.css";
 
-const AgendamentoCadastro = () => {
-  const location = useLocation(); // Hook para acessar os dados da rota
-  const agendamentoData = location.state?.agendamento; // Obtém os dados do agendamento
 
-  const [nomeCliente, setNomeCliente] = useState(
-    agendamentoData ? agendamentoData.nomeCliente : "",
-  );
-  const [nomePrestador, setNomePrestador] = useState(
-    agendamentoData ? agendamentoData.nomePrestador : "",
-  );
-  const [data, setData] = useState(
-    agendamentoData
-      ? new Date(agendamentoData.data).toISOString().substring(0, 10)
-      : "",
-  );
-  const [horario, setHorario] = useState(
-    agendamentoData ? agendamentoData.horario : "",
-  );
+
+const AgendamentoCadastro = () => {
+  const location = useLocation();
+  const agendamentoData = location.state?.agendamento;
+
+  const [nomeCliente, setNomeCliente] = useState(agendamentoData ? agendamentoData.nomeCliente : "");
+  const [nomePrestador, setNomePrestador] = useState(agendamentoData ? agendamentoData.nomePrestador : "");
+  const [data, setData] = useState(agendamentoData ? new Date(agendamentoData.data).toISOString().substring(0, 10) : "");
+  const [horario, setHorario] = useState(agendamentoData ? agendamentoData.horario : "");
+
+  const [clientes, setClientes] = useState([]);
+  const [prestadores, setPrestadores] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const token = localStorage.getItem("authToken");
+
+        const clienteResponse = await axios.get("http://localhost:3000/clientes", {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+
+        const prestadorResponse = await axios.get("http://localhost:3000/prestador", {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+
+        setClientes(clienteResponse.data);
+        setPrestadores(prestadorResponse.data);
+      } catch (error) {
+        console.error("Erro ao buscar dados de clientes ou prestadores", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const handleCadastro = async (e) => {
     e.preventDefault();
+    const clienteSelecionado = clientes.find(cliente => cliente._id === nomeCliente);
+    const prestadorSelecionado = prestadores.find(prestador => prestador._id === nomePrestador);
 
     const agendamento = {
-      nomeCliente,
-      nomePrestador,
+      nomeCliente: clienteSelecionado ? clienteSelecionado.nome : nomeCliente,
+      nomePrestador: prestadorSelecionado ? prestadorSelecionado.nome : nomePrestador,
+      prestadorId: prestadorSelecionado ? prestadorSelecionado._id : nomePrestador,
       data: new Date(data).toISOString(),
-      horario: Number(horario), // Converter para número
+      horario: horario,
     };
 
     try {
       const token = localStorage.getItem("authToken");
-      console.log("Token: ", token);
       if (agendamentoData && agendamentoData._id) {
-        // Se estamos editando, fazemos uma atualização
-        await api.put(
+        await axios.put(
           `http://localhost:3000/agendamentos/${agendamentoData._id}`,
           agendamento,
           {
             headers: {
               Authorization: `Bearer ${token}`,
             },
-          },
+          }
         );
       } else {
-        // Se estamos criando, fazemos uma criação
-        await api.post("http://localhost:3000/agendamentos", agendamento, {
+        await axios.post("http://localhost:3000/agendamentos", agendamento, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -71,50 +90,47 @@ const AgendamentoCadastro = () => {
   };
 
   return (
-    <Container className="w-50 p-5" controlId="container">
-      <Row className="row justify-content-md-center">
-        <h1
-          className="mb-4 mt-3"
-          style={{
-            color: "#F79824",
-            fontSize: "58px",
-            textAlign: "center",
-            color: "#7E5A9B",
-          }}
-        >
-          AGENDAMENTO
-        </h1>
-
+    <Container>
+      <Row>
         <Form
-          style={{
-            backgroundColor: "#F5F5F5",
-            borderRadius: "8px",
-            border: "3px",
-            color: "#7E5A9B",
-            fontSize: "24px",
-          }}
+          style={{ backgroundColor: '#F5F5F5', borderRadius: '8px', border: '3px', color: '#7E5A9B', fontSize: '24px' }}
           onSubmit={handleCadastro}
         >
           <Form.Group className="mb-3 mt-3" controlId="nomeCliente">
             <Form.Label>Nome Cliente</Form.Label>
             <Form.Control
-              type="text"
+              as="select"
               name="nomeCliente"
               value={nomeCliente}
               onChange={(e) => setNomeCliente(e.target.value)}
-            />
+            >
+              <option value="">Selecione um Cliente</option>
+              {clientes.map((cliente) => (
+                <option key={cliente._id} value={cliente._id}>
+                  {cliente.nome}
+                </option>
+              ))}
+            </Form.Control>
           </Form.Group>
 
           <Form.Group className="mb-3 mt-3" controlId="nomePrestador">
             <Form.Label>Nome Prestador</Form.Label>
             <Form.Control
-              type="text"
+              as="select"
               name="nomePrestador"
               value={nomePrestador}
               onChange={(e) => setNomePrestador(e.target.value)}
-            />
+            >
+              <option value="">Selecione um Prestador</option>
+              {prestadores.map((prestador) => (
+                <option key={prestador._id} value={prestador._id}>
+                  {prestador.nome}
+                </option>
+              ))}
+            </Form.Control>
           </Form.Group>
 
+          {/* Data */}
           <Form.Group className="mb-3" controlId="data">
             <Form.Label>Data</Form.Label>
             <Form.Control
@@ -128,10 +144,24 @@ const AgendamentoCadastro = () => {
           <Form.Group className="mb-3" controlId="horario">
             <Form.Label>Horário</Form.Label>
             <Form.Control
-              type="number"
+              type="text"
               name="horario"
               value={horario}
-              onChange={(e) => setHorario(e.target.value)}
+              placeholder="HH:mm"
+              onChange={(e) => {
+                let value = e.target.value;
+
+                value = value.replace(/[^0-9:]/g, "");
+                if (value.length === 2 || value.length === 5) {
+                  value += ":";
+                }
+
+                if (value.length > 5) {
+                  value = value.slice(0, 5);
+                }
+
+                setHorario(value);
+              }}
             />
           </Form.Group>
 
