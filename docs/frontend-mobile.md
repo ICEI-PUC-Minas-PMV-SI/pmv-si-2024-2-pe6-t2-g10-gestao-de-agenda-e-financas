@@ -62,30 +62,43 @@ A interface web da Agenda Fácil é projetada para proporcionar uma experiência
 
 **Home**
 ![Home](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Mobile%20-%20Pag.%20inicial.png)
+
 **Login**
 ![Login](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Mobile%20-%20Login.png)
+
 **Cadastro do Prestador**
 ![Cadastro do Prestador](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Mobile%20-%20Cadastro%20Prestador.png)
+
 **Página Inicial**
 ![Pagina Inicial](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Mobile%20-%20Home.png)
+
 **Agendamento | Calendário**
 ![Calendario](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Mobile%20-%20Agendamento.png)
+
 **Agendamento | Criar**
 ![Criar](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Mobile%20-%20Agendamento%20-%2001.png)
+
 **Cadastros**
 ![Cadastro](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Mobile%20-%20Cadastros.png)
+
 **Clientes**
 ![Clientes](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Mobile%20-%20Clientes.png)
+
 **Serviços**
 ![Serviços](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Mobile%20-%20Servi%C3%A7os.png)
+
 **Lista | Clientes**
 ![Lista](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Mobile%20-%20Lista%20de%20Clientes.png)
+
 **Lista | Serviços**
 ![Lista Serviços](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Mobile%20-%20Lista%20de%20Servi%C3%A7os.png)
+
 **Financeiro**
 ![Financeiro](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Mobile%20-%20Agendamento%20-%2001.png)
+
 **Financeiro | Cadastro**
 ![Cadastro](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Mobile%20-%20Financeiro.png)
+
 **Relatório**
 ![Relatorio](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Mobile%20-%20Relat%C3%B3rios.png)
 
