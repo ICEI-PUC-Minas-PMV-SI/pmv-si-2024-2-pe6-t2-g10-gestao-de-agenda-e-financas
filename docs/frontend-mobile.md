@@ -37,7 +37,7 @@ A escolha do React Native para o front-end visa proporcionar uma interface dinâ
 
 ## Modelagem da Aplicação
 
-![User Flow - Mobile](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/58ec42f3d9c1894bc372f01a6635753eee728db5/docs/img/Frame%2044%20(1).svg)
+![User Flow - Mobile](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/UserFlow.png)
 
 ## Projeto da Interface
 
