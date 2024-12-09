@@ -336,6 +336,7 @@ Servidor Dedicado com Windows Server.
 3.	Navegue pelas páginas e observe o layout.
 
 **Resultado esperado:** O layout do sistema é ajustado corretamente, sem quebras de design ou problemas de visualização.
+
 ![Responsividade](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/RNF%2003.png)
 
 
