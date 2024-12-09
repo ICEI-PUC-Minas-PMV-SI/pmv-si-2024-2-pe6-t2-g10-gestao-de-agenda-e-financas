@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Row from 'react-bootstrap/Row';
@@ -8,7 +8,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 const CadastroServico = () => {
   const location = useLocation();
-  const servico = location.state?.servico || {};
+  const servico = useMemo(() => location.state?.servico || {}, [location.state?.servico]);
 
   const [formServico, setFormServico] = useState({
     descricao: "",
@@ -29,24 +29,35 @@ const CadastroServico = () => {
   const [successMessage, setSuccessMessage] = useState("");
 
   useEffect(() => {
-    if (servico._id) {
-      setFormServico({
-        descricao: servico.descricao || "",
-        preco: servico.preco || "",
-        duracao: servico.duracao || "",
-      });
-    }
-  }, [servico]);
+    const fetchServico = async () => {
+      try {
+        if (servico._id) {
+          const token = localStorage.getItem('authToken');
+          const response = await api.get(`/servicos/${servico._id}`, {
+            headers: {
+              Authorization: `Bearer ${token}`
+            }
+          });
+          setFormServico({
+            descricao: response.data.descricao,
+            preco: response.data.preco,
+            duracao: response.data.duracao
+          });
+        }
+      } catch (error) {
+        setError("Falha ao buscar serviço:", error.message);
+        console.error("Erro ao buscar o serviço:", error);
+      }
+    };
+  
+    fetchServico();
+  }, [servico._id]);
 
+  
   const alteraCadastroServico = (e) => {
-    const { name, value } = e.target;
-    let formattedValue = value;
-    if (name === 'preco') {
-      formattedValue = value.replace(/[^\d,]/g, '');
-    }
     setFormServico({
       ...formServico,
-      [name]: formattedValue,
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -123,7 +134,7 @@ const CadastroServico = () => {
             maxWidth: '672px',
           }}>
 
-          <Form.Group className="mb-3 mt-3" controlId="clienteNome">
+          <Form.Group className="mb-3 mt-3" controlId="servicoDescricao">
             <Form.Label>Descrição</Form.Label>
             <Form.Control style={{width: '100%', border: '3px solid #BDBDBD', borderradius: '8px' }}
               type="text"
@@ -134,7 +145,7 @@ const CadastroServico = () => {
             />
           </Form.Group>
 
-          <Form.Group className="mb-3 mt-3" controlId="clienteEmail">
+          <Form.Group className="mb-3 mt-3" controlId="servicoPreco">
             <Form.Label>Preço</Form.Label>
             <Form.Control style={{width: '100%', border: '3px solid #BDBDBD', borderradius: '8px' }}
               type="text"
@@ -148,7 +159,7 @@ const CadastroServico = () => {
             />
           </Form.Group>
 
-          <Form.Group className="mb-3 mt-3" controlId="clienteTelefone">
+          <Form.Group className="mb-3 mt-3" controlId="servicoDuracao">
             <Form.Label>Duração</Form.Label>
             <Form.Control style={{width: '100%', border: '3px solid #BDBDBD', borderradius: '8px' }}
               type="text"

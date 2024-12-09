@@ -5,18 +5,20 @@ const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userToken, setUserToken] = useState(null); 
   const [userName, setUserName] = useState('');
   const [userId, setUserId] = useState('');
 
   useEffect(() => {
     const loadAuthData = async () => {
       try {
-        const token = await AsyncStorage.getItem('authToken');
-        const storedUserName = await AsyncStorage.getItem('userName');
-        const storedUserId = await AsyncStorage.getItem('userId');
+        const token = await AsyncStorage.getItem('@userToken');
+        const storedUserName = await AsyncStorage.getItem('@userName');
+        const storedUserId = await AsyncStorage.getItem('@userId');
 
         if (token && storedUserName && storedUserId) {
           setIsLoggedIn(true);
+          setUserToken(token);
           setUserName(storedUserName);
           setUserId(storedUserId);
 
@@ -35,6 +37,7 @@ export const AuthProvider = ({ children }) => {
       await AsyncStorage.setItem('@userName', nome);
       await AsyncStorage.setItem('@userId', id);
       setIsLoggedIn(true);
+      setUserToken(token);
       setUserName(nome);
       setUserId(id);
       
@@ -45,7 +48,7 @@ export const AuthProvider = ({ children }) => {
 
   const logout = async () => {
     try {
-      await AsyncStorage.removeItem('authToken');
+      await AsyncStorage.removeItem('userToken');
       await AsyncStorage.removeItem('userName');
       await AsyncStorage.removeItem('userId');
 
@@ -58,7 +61,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ isLoggedIn, userName, userId, login, logout }}>
+    <AuthContext.Provider value={{ isLoggedIn, userToken, userName, userId, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

@@ -17,8 +17,8 @@ router.delete('/prestador/:id', prestadorController.deletePrestador);
 router.put('/prestador/:id', prestadorController.updatePrestador);
 
 // Serviços
-router.get('/servicos', authMiddleware, servicoController.getAllServicos);
 router.post('/servicos', authMiddleware, servicoController.createServico);
+router.get('/servicos', authMiddleware, servicoController.getAllServicos);
 router.put('/servicos/:id', authMiddleware, servicoController.updateServico);
 router.delete('/servicos/:id', authMiddleware, servicoController.deleteServico);
 router.get('/servicos/prestador/:id', authMiddleware, servicoController.getAllServicosByPrestador);

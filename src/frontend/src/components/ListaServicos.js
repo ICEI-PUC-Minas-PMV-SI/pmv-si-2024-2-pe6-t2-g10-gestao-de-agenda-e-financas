@@ -166,6 +166,11 @@ const ListaServicos = () => {
                   <Button
                     variant="danger"
                     onClick={() => handleDelete(servico._id)}
+                    style={{
+                      backgroundColor: '#d9534f',
+                      borderColor: '#d9534f',
+                      color: 'white' 
+                    }}
                   >
                     Excluir
                   </Button>

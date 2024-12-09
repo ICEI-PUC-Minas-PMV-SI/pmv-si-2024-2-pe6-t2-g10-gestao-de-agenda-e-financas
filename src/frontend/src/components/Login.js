@@ -33,7 +33,7 @@ function Login() {
                 } else if (error.response.data && error.response.data.message) {
                     alert(error.response.data.message);
                 } else {
-                    alert("Erro ao tentar realizar o login.");
+                    alert("Erro ao tentar realizar o login: " + error.message);
                 }
             }
         }
