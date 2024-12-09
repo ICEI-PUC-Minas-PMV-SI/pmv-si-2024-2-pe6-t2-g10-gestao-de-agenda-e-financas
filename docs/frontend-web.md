@@ -201,15 +201,142 @@ Servidor Dedicado com Windows Server.
 
 ## Testes
 
-**Teste - Agendamento**
+**REQUISITOS FUNCIONAIS**
 
-![Agendamento Calendario](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Agend%20-%201.jpeg)
+**RF-001: PERMITIR QUE O PRESTADOR SE CADASTRE NO SISTEMA**
 
-**Teste - Cadastro de Clientes**
+**CT-01: Cadastrar um novo prestador com todos os dados válidos**
+* Pré-condições: O prestador não deve estar cadastrado no sistema.
+* Passos:
+1.	Acesse a página, clicar no botão CADASTRE-SE (localizado no campo superior à direita).
+2.	Preencha todos os campos obrigatórios com dados válidos (nome, CNPJ, telefone, endereço e senha).
+3.	Clique em “Salvar”.
 
-![Cadastro](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Cad%20-%201.jpeg)
-![Cadastro2](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Cad%20-%202.jpeg)
-![Cadastro3](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Cad%20-%203.jpeg)
+**Resultado esperado:** O prestador é cadastrado com sucesso e uma mensagem de confirmação é exibida.
+
+![Cadastro 01](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Cadastro%20-%20Finalizado.png)
+
+
+**RF-002: PERMITIR O GERENCIAMENTO DE CLIENTES**
+
+**CT-02: Cadastrar um novo cliente**
+* Pré-condições: O prestador deve estar logado no sistema.
+* Passos:
+1.	Acesse a área de Cadastro.
+2.	Clique em “CLIENTES”.
+3.	Preencha os dados obrigatórios (nome, telefone e e-mail).
+4.	Clique em “Salvar”.
+
+**Resultado esperado:** O cliente é adicionado com sucesso e aparece na lista de clientes.
+
+![Cadastro](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Cad%20-%202.jpeg)
+![Cadastro01](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Cad%20-%203.jpeg)
+
+
+**RF-003: PERMITIR O GERENCIAMENTO DE SERVIÇOS**
+
+**CT-03: Cadastrar um novo serviço**
+* Pré-condições: O usuário deve estar logado no sistema.
+* Passos:
+1.	Acesse a área de Cadastro.
+2.	Clique em “SERVIÇOS”.
+3.	Preencha os dados obrigatórios (descrição, preço e duração).
+4.	Clique em “Salvar”.
+
+**Resultado esperado:** O serviço é adicionado com sucesso e aparece na lista de serviços.
+
+![Serviços](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Servi%C3%A7os.png)
+![Serviços - Lista](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Servi%C3%A7os%20-%20Lista.png)
+
+
+**RF-004: PERMITIR O GERENCIAMENTO DOS AGENDAMENTOS DOS PRESTADORES**
+
+**CT-04: Editar um agendamento existente**
+* Pré-condições: Pelo menos um agendamento deve estar cadastrado.
+* Passos:
+1.	Acesse a área de Agendamentos.
+2.	Clique no botão “Lista”.
+3.	Selecione o agendamento a ser editado.
+4.	Clique em “Editar”.
+5.	Alterar dados (exemplo: horário ou data).
+6.	Clique em “Salvar”.
+
+**Resultado esperado:** As alterações são salvas corretamente e o agendamento editado aparece com os novos dados.
+
+![Lista 01](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Lista%2001.png)
+![Lista 02](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Lista%2002.png)
+
+
+**RF-005: PERMITIR GERENCIAMENTO DAS TRANSAÇÕES FINANCEIRAS (RECEITAS E DESPESAS)**
+
+**CT-05: Excluir uma transação**
+* Pré-condições: Pelo menos uma transação de receita deve estar cadastrada.
+* Passos:
+1.	Acesse a área Financeiro.
+2.	Selecione a transação a ser excluída.
+3.	Clique em “Excluir”.
+4.	Confirme a exclusão.
+
+**Resultado esperado:** A transação é removida do sistema e não aparece mais na lista.
+
+![Retirada](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Retirada%2001.png)
+![Retirada 01](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Retirada%2002.png)
+
+
+**RF-006: PERMITIR QUE OS USUÁRIOS POSSAM EMITIR RELATÓRIOS**
+
+**CT-06: Emitir relatório de transações financeiras**
+* Pré-condições: O usuário deve estar logado no sistema e devem existir transações financeiras cadastradas.
+* Passos:
+1.	Acesse a área de Relatórios.
+2.	Selecione “Selecione o período".
+3.	Clique em "Emitir Relatório".
+
+**Resultado esperado:** O relatório de transações financeiras é gerado e exibido na tela.
+
+![Relatório](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Relat%C3%B3rio.png)
+
+
+**REQUISITOS NÃO FUNCIONAIS**
+
+**RNF-001: Permitir a autenticação dos usuários (login e senha)**
+
+**CT-RNF01: Autenticar com credenciais válidas**
+* Pré-condições: O usuário já deve estar cadastrado no sistema com credenciais válidas.
+* Passos:
+1.	Acesse a página de login.
+2.	Insira o usuário (e-mail) e senha corretos.
+3.	Clique em “Entrar”.
+
+**Resultado esperado:** O usuário é redirecionado para a página inicial do sistema.
+
+![Autenticação](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Login%20-%20usu%C3%A1rio.png)
+
+
+**RNF-002: Oferecer uma interface intuitiva**
+
+**CT-RNF02: Validar a facilidade de navegação entre as páginas do sistema**
+* Pré-condições: O usuário deve estar logado no sistema.
+* Passos:
+1.	Navegue entre as seções principais do sistema.
+2.	Observe a resposta visual e tempo de navegação entre as páginas.
+
+**Resultado esperado:** A navegação entre as seções é intuitiva e sem dificuldades. O sistema carrega as páginas de maneira rápida e sem erros.
+
+![Interface](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/RNF02.png)
+
+
+**RNF-003: Desenvolver um sistema responsivo para acesso em dispositivos móveis**
+
+**CT-RNF03: Testar a responsividade em diferentes resoluções de tela**
+* Pré-condições: O sistema deve ser acessado em diferentes resoluções de tela.
+* Passos:
+1.	Acesse o Inspecionar no navegador.
+2.	Verifique os diferentes tipos de dispositivos através DIMENSIONS.
+3.	Navegue pelas páginas e observe o layout.
+
+**Resultado esperado:** O layout do sistema é ajustado corretamente, sem quebras de design ou problemas de visualização.
+![Responsividade](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/RNF%2003.png)
 
 
 # Referências
