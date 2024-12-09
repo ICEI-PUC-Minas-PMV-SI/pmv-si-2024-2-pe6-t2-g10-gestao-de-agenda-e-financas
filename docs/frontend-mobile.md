@@ -232,6 +232,9 @@ Tendo em vista, que a aplicação com dados sensíveis, é necessários prioriza
 
 **Resultado esperado:** O prestador é cadastrado com sucesso e uma mensagem de confirmação é exibida.
 
+![RF01](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/Mobile%20-%20RF.1.2.jpeg)
+![RF01.2](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/Mobile%20-%20RF.1.jpeg)
+
 
 **RF-002: PERMITIR O GERENCIAMENTO DE CLIENTES**
 
@@ -244,6 +247,11 @@ Tendo em vista, que a aplicação com dados sensíveis, é necessários prioriza
 4.	Clique em “Salvar”.
 
 **Resultado esperado:** O cliente é adicionado com sucesso e aparece na lista de clientes.
+
+![RF02](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/Mobile%20-%20RF.2.jpeg)
+![RF02.1](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/Mobile%20-%20RF.2.1.jpeg)
+![RF02.2](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/Mobile%20-%20RF.2.2.jpeg)
+![RF02.3](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/Mobile%20-%20RF.2.3.jpeg)
 
 
 **RF-003: PERMITIR O GERENCIAMENTO DE SERVIÇOS**
@@ -258,6 +266,9 @@ Tendo em vista, que a aplicação com dados sensíveis, é necessários prioriza
 
 **Resultado esperado:** O serviço é adicionado com sucesso e aparece na lista de serviços.
 
+![RF03](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/Mobile%20-%20RF.3.jpeg)
+![RF03.1](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/Mobile%20-%20RF.3.1.jpeg)
+![RF03.2](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/Mobile%20-%20RF.3.2.jpeg)
 
 **RF-005: PERMITIR GERENCIAMENTO DAS TRANSAÇÕES FINANCEIRAS (RECEITAS E DESPESAS)**
 
@@ -270,6 +281,12 @@ Tendo em vista, que a aplicação com dados sensíveis, é necessários prioriza
 4.	Confirme a exclusão.
 
 **Resultado esperado:** A transação é removida do sistema e não aparece mais na lista.
+
+![RF05](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/Mobile%20-%20RF.5.jpeg)
+![RF05.1](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/Mobile%20-%20RF.5.1.jpeg)
+![RF05.2](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/Mobile%20-%20RF.5.2.jpeg)
+![RF05.3](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/Mobile%20-%20RF.5.3.jpeg)
+![RF05.4](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/Mobile%20-%20RF.5.4.jpeg)
 
 
 **REQUISITOS NÃO FUNCIONAIS**
@@ -285,6 +302,8 @@ Tendo em vista, que a aplicação com dados sensíveis, é necessários prioriza
 
 **Resultado esperado:** O usuário é redirecionado para a página inicial do sistema.
 
+![RNF01](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/Mobile%20-%20RNF.1.jpeg)
+
 
 **RNF-002: Oferecer uma interface intuitiva**
 
@@ -295,6 +314,8 @@ Tendo em vista, que a aplicação com dados sensíveis, é necessários prioriza
 2.	Observe a resposta visual e tempo de navegação entre as páginas.
 
 **Resultado esperado:** A navegação entre as seções é intuitiva e sem dificuldades. O sistema carrega as páginas de maneira rápida e sem erros.
+
+![RNF02](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/Mobile%20-%20RNF.2.jpeg)
 
 
 **RNF-003: Desenvolver um sistema responsivo para acesso em dispositivos móveis**
@@ -307,6 +328,8 @@ Tendo em vista, que a aplicação com dados sensíveis, é necessários prioriza
 3.	Navegue pelas páginas e observe o layout.
 
 **Resultado esperado:** O layout do sistema é ajustado corretamente, sem quebras de design ou problemas de visualização.
+
+![RNF03](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/Mobile%20-%20RNF.3.jpeg)
 
 
 # Referências
