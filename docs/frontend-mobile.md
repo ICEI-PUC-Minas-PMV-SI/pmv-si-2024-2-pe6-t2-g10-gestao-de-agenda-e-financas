@@ -259,21 +259,6 @@ Tendo em vista, que a aplicação com dados sensíveis, é necessários prioriza
 **Resultado esperado:** O serviço é adicionado com sucesso e aparece na lista de serviços.
 
 
-**RF-004: PERMITIR O GERENCIAMENTO DOS AGENDAMENTOS DOS PRESTADORES**
-
-**CT-04: Editar um agendamento existente**
-* Pré-condições: Pelo menos um agendamento deve estar cadastrado.
-* Passos:
-1.	Acesse a área de Agendamentos.
-2.	Clique no botão “Lista”.
-3.	Selecione o agendamento a ser editado.
-4.	Clique em “Editar”.
-5.	Alterar dados (exemplo: horário ou data).
-6.	Clique em “Salvar”.
-
-**Resultado esperado:** As alterações são salvas corretamente e o agendamento editado aparece com os novos dados.
-
-
 **RF-005: PERMITIR GERENCIAMENTO DAS TRANSAÇÕES FINANCEIRAS (RECEITAS E DESPESAS)**
 
 **CT-05: Excluir uma transação**
@@ -285,18 +270,6 @@ Tendo em vista, que a aplicação com dados sensíveis, é necessários prioriza
 4.	Confirme a exclusão.
 
 **Resultado esperado:** A transação é removida do sistema e não aparece mais na lista.
-
-
-**RF-006: PERMITIR QUE OS USUÁRIOS POSSAM EMITIR RELATÓRIOS**
-
-**CT-06: Emitir relatório de transações financeiras**
-* Pré-condições: O usuário deve estar logado no sistema e devem existir transações financeiras cadastradas.
-* Passos:
-1.	Acesse a área de Relatórios.
-2.	Selecione “Selecione o período".
-3.	Clique em "Emitir Relatório".
-
-**Resultado esperado:** O relatório de transações financeiras é gerado e exibido na tela.
 
 
 **REQUISITOS NÃO FUNCIONAIS**
@@ -334,28 +307,6 @@ Tendo em vista, que a aplicação com dados sensíveis, é necessários prioriza
 3.	Navegue pelas páginas e observe o layout.
 
 **Resultado esperado:** O layout do sistema é ajustado corretamente, sem quebras de design ou problemas de visualização.
-
-
-**RNF-004: Preparar o sistema para suportar aumento no número de clientes, agendamentos e transações**
-
-**CT-RNF04: Testar o comportamento do sistema com uma carga de dados crescente**
-* Pré-condições: O sistema deve ter um número razoável de clientes, agendamentos e transações (por exemplo, 1000 clientes e 1000 agendamentos).
-* Passos:
-1.	Realize uma carga progressiva de dados, adicionando clientes, agendamentos e transações.
-2.	Após atingir a carga de 1000 dados, execute ações comuns (adicionar e editar).
-
-**Resultado esperado:** O sistema continua funcionando corretamente sem lentidão ou travamentos.
-
-
-**RNF-005: Adequar a aplicação perante as normas de proteção de dados** | **RNF-006: Garantir a segurança dos dados pessoais e financeiros**
-
-**CT-RNF05: Testar se a senha do usuário é armazenada de forma segura**
-* Pré-condições: O usuário deve ter uma conta no sistema.
-* Passos:
-1.	Acesse o banco de dados ou utilize ferramentas de desenvolvedor para verificar o armazenamento de senhas.
-2.	Verifique se as senhas são armazenadas em formato de hash (não em texto simples).
-
-**Resultado esperado:** As senhas são armazenadas de forma segura utilizando um algoritmo de hash adequado (ex.: bcrypt, SHA-256).
 
 
 # Referências
